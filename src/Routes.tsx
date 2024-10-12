@@ -1,9 +1,9 @@
-import './app.scss';
+import './app.css';
 import { Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom';
-import AboutBuddy from './sections/aboutBuddy/AboutBuddy';
+import AboutBuddy from './sections/AboutBuddy';
 import Auth from './pages/auth/Auth';
 import VerifyEmail from './pages/auth/VerifyEmail';
-import Sidebar from './sections/sidebar/Sidebar';
+import Sidebar from './sections/Sidebar';
 import Dashboard from './pages/dashboard/Dashboard';
 import Message from './pages/dashboard/Message';
 
@@ -13,11 +13,11 @@ function Routes() {
 
     function DashboardLayout(){
         return(
-            <section className="dash_layout">
-                <div className="">
+            <section className="flex flex-row">
+                <div className="flex-1">
                     <Sidebar/>
                 </div>
-                <div className="">
+                <div className="flex-1">
                     <Outlet/>
                 </div>
             </section>
@@ -26,11 +26,11 @@ function Routes() {
 
     function AuthLayout(){
         return(
-            <section className="auth-layout">
-                <div className="auth_layout-l">
+            <section className="flex">
+                <div className="flex-1 bg-black">
                     <AboutBuddy/>
                 </div>
-                <div className="auth_layout-r">
+                <div className="flex-1">
                     <Outlet/>
                 </div>
             </section>

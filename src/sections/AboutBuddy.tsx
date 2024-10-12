@@ -1,9 +1,8 @@
 import React from 'react';
-import './aboutbuddy.scss';
 
 const AboutBuddy = () => {
   return (
-    <section className='about-buudy'>
+    <section className='flex-1 bg-black'>
         AboutBuddy
     </section>
   )
