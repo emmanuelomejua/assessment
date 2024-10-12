@@ -42,3 +42,4 @@ const AboutBuddy = () => {
 
 export default AboutBuddy;
 
+// background: #FF8600;

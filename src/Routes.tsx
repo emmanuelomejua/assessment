@@ -31,8 +31,17 @@ function Routes() {
                 <div className="flex-1 bg-[#fff]">
                     <AboutBuddy/>
                 </div>
-                <div className="flex-1 bg-[#F8FAFC]">
-                    <Outlet/>
+                <div className="flex-1 bg-[#F8FAFC] p-[70px] flex-col">
+                    <div className="flex justify-center h-fit ">
+                        <Outlet/>
+                    </div>
+                    <div className="flex justify-between p-[50px]">
+                        <div className=""></div>
+                        <div className='flex mt-[120px] items-center gap-1 p-[15px] text-[#fff] bg-[#FF8600] w-fit rounded-3xl cursor-pointer'>
+                            <span className='text-[14px] font-bold'>Get Help</span>
+                            <img src='/chat.png' alt='' className='h-4'/>
+                        </div>
+                    </div>
                 </div>
             </div>
         )

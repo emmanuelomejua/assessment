@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { FC } from 'react';
 
-const Button = () => {
+type IButton = {
+    url: string;
+    text: string;
+}
+
+const Button:FC<IButton> = ({text, url}) => {
   return (
-    <div>Button</div>
+    <div className='flex flex-row items-center justify-center p-4 rounded gap-2 border-[#DDE2E4] border-[1px] cursor-pointer'>
+        <img src={url} alt="" className="" />
+        <span>{text}</span>
+    </div>
   )
 }
 
