@@ -20,7 +20,7 @@ const AboutBuddy = () => {
 
 
   return (
-    <section className='flex flex-col justify-center h-full px-[60px] py-[30px]'>
+    <section className='flex flex-col h-full px-[60px] py-[30px]'>
 
       <div className="flex flex-row gap-1 items-center mb-[40px]">
         <img src="/buddy.png" alt="" className="h-[36px] w-[31px]" />
