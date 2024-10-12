@@ -1,8 +1,14 @@
-import React from 'react'
+import React from 'react';
+
+
 
 const Sidebar = () => {
   return (
-    <div>Sidebar</div>
+    <div className='flex flex-col justify-center items-center bg-[#fff]'>
+      <img src="/buddy.png" alt="" className="" />
+
+
+    </div>
   )
 }
 
