@@ -6,7 +6,6 @@ import VerifyEmail from './pages/auth/VerifyEmail';
 import Sidebar from './sections/Sidebar';
 import Dashboard from './pages/dashboard/Dashboard';
 import Message from './pages/dashboard/Message';
-import Navbar from './sections/Navbar';
 import SignIn from './pages/auth/SignIn';
 import Verified from './pages/auth/Verified';
 
@@ -17,12 +16,9 @@ function Routes() {
 
     function DashboardLayout(){
         return(
-            <div className="flex flex-row w-full bg-[#F8FAFC]" >
+            <div className="flex flex-row max-w-[100vw] bg-[#F8FAFC] min-h-[100vh]" >
                 <Sidebar/>
-                <div className="flex flex-col min-h-[100vh]">
-                    <Navbar/>
-                    <Outlet/>
-                </div>
+                <Outlet/>
             </div>
         )
     }

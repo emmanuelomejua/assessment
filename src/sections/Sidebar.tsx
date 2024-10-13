@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 
 
@@ -11,32 +11,32 @@ const list = [
     url: '/'
   },
   {
-    id: 0,
+    id: 1,
     name: 'My Group',
     icon: '/group.png',
     url: '#'
   },
   {
-    id: 0,
+    id: 2,
     name: 'Messages',
     icon: '/messages.png',
     url: '/messages'
   },
   {
-    id: 0,
+    id: 3,
     name: 'Analytics',
     icon: '/analytics.png',
     url: '#'
   },
   {
-    id: 0,
+    id: 4,
     name: 'Pack',
     icon: '/pack.png',
     url: '#'
   },
   {
-    id: 0,
-    name: 'Setting',
+    id: 5,
+    name: 'Settings',
     icon: '/settings.png',
     url: '#'
   },
@@ -45,26 +45,51 @@ const list = [
 
 
 const Sidebar = () => {
+
+  const location = useLocation();
+
   return (
-    <div className='flex flex-col bg-[#fff] w-[250px] py-4 gap-4'>
-      <div className="flex flex-row gap-2 justify-center">
-       <img src="/buddy.png" alt="" className="" />
-       <span className='text-[#3B3B45] text-[24px] font-semibold'>Buddy</span>
-      </div>
-
-      { list.map((l) => (
-        <Link to={l.url} key={l.id} className="flex flex-row items-center gap-1 my-2 cursor-pointer">
-          <img src={l.icon} alt="" className="h-[18px] w-[18px]" />
-          <span className='text-[#818187] text-[14px] font-[500]'>{l.name}</span>
-        </Link>
-      ))
-      }
-
-      <div className="mt-auto">
-         Message
-      </div>
-
+    <div className="flex flex-col bg-[#fff] w-[240px] py-6 px-4 shadow-md gap-4">
+      
+    {/* Logo Section */}
+    <div className="flex items-center justify-center mb-8">
+      <img src="/buddy.png" alt="Buddy Logo" className="h-[40px]" />
+      <span className="text-[#3B3B45] text-[24px] font-bold ml-2">Buddy</span>
     </div>
+    
+    {/* Menu Items */}
+    <div className="flex flex-col gap-4">
+      {list.map((item) => (
+        <Link 
+          to={item.url} 
+          key={item.id}
+          className={`flex items-center gap-3 p-3 rounded-md text-sm font-[500] transition-all duration-300
+          ${location.pathname === item.url ? 'text-[#FF8600] bg-white shadow-lg' : 'text-[#818187] hover:bg-gray-100'}`}
+        >
+          <img src={item.icon} alt={item.name} className="h-[18px] w-[18px]" />
+          <span>{item.name}</span>
+        </Link>
+      ))}
+    </div>
+    
+    {/* Profile Section */}
+    <div className="mt-auto flex flex-col items-center gap-4 rounded-xl shadow-lg p-[24px] relative">
+      <img 
+          src="/ellipse1.png" 
+          alt="Theresa Milly" 
+          className="h-[40px] w-[40px] rounded-full absolute right-0 left-[40%] top-[-15px]"
+        />
+        <div className="flex flex-col mt-[20px]">
+          <span className="text-[#3B3B45] text-sm font-semibold">Theresa Milly</span>
+          <span className="text-[#818187] text-xs text-center">Influencer</span>
+        </div>
+
+        <div className="flex flex-row bg-[#ff88006a] text-[#FF8600] cursor-pointer w-full gap-2 items-center justify-center p-3 rounded-lg ">
+          <img src="/exit.png" alt="" className="h-[15px] w-[12px]" />
+          <button className="font-[500] text-sm">Logout</button>
+        </div>
+      </div>
+  </div>
   )
 }
 
