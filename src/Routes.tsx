@@ -8,6 +8,7 @@ import Dashboard from './pages/dashboard/Dashboard';
 import Message from './pages/dashboard/Message';
 import Navbar from './sections/Navbar';
 import SignIn from './pages/auth/SignIn';
+import Verified from './pages/auth/Verified';
 
 
 
@@ -101,6 +102,10 @@ function Routes() {
                 {
                     path: '/verify',
                     element: <VerifyEmail/>
+                },
+                {
+                    path: '/verify/success',
+                    element: <Verified/>
                 },
             ]
         },

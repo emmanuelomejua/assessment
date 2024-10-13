@@ -30,7 +30,7 @@ export const AuthButton:FC<IButton> = ({text, url}) => {
 
 export const PlainButton:FC<IButton> = ({text, onClick}) => {
     return(
-        <button onClick={onClick} className="bg-[#FF8600] w-fit py-3 px-8 outline-none cursor-pointer rounded-xl text-[#fff]">
+        <button onClick={onClick} className="bg-[#FF8600] w-fit py-3 px-8 outline-none my-5 cursor-pointer rounded-xl text-[#fff]">
             {text}
         </button>
     )
