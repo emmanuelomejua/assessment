@@ -14,7 +14,7 @@ const Auth = () => {
         <hr className='w-full'/>
       </div>
 
-      <Button text='Sign up with google' url='/google.png' />
+      <Button text='Sign up with Google' url='/google.png' />
 
 
       <p className="text-[#5B6871] text-[16px] font-[400] mt-[24px]">

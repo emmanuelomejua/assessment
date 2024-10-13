@@ -1,29 +1,43 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../../components/Header';
 import Input from '../../components/Input';
+import {AuthButton} from '../../components/Button';
 
 const SignIn = () => {
+
+  const [isSignUp, setIsSignup] = useState(false);
+
+  const switchMode = () => {
+    setIsSignup(!isSignUp)
+  }
+
+
   return (
     <div className='flex flex-col gap-5'>
-      <Header text='Register your account'/>
+      <Header text={isSignUp ? 'Register your account': 'Log in to your account'}/>
 
-      <p className='text-[#5B6871] text-[13px] font-[400]'>Proceed to create account and setup your organization</p>
+      <p className='text-[#5B6871] text-[15px] font-[400]'>Proceed to create account and setup your organization</p>
 
-      <div className="flex flex-row gap-2">
-        <Input/>
-        <Input/>
-      </div>
+      {isSignUp &&
+        <div className="flex flex-row gap-2">
+          <Input half type='text' img='/user.png' label='First Name' placeholder='First Name'/>
+          <Input half type='text' img='/user.png' label='Last Name' placeholder='Last Name'/>
+        </div>
+      }
 
-      <Input/>
-      <Input/>
+      <Input type='email' img='/email2.png' label='Work Email' placeholder='Work Email' isEmail/>
+      <Input type='password' img='/lock.png' label='Password' placeholder='Password' />
 
-      <p className="text-[#5B6871] text-[16px] font-[400] mt-[24px]">
+      <AuthButton text={isSignUp ? 'Create account': 'Login'}/>
+
+      <p className="text-[#5B6871] text-[20px] font-[400] mt-[24px]">
         By clicking the button above, you agree to our <span className='text-[#FF8600] '>Terms of Service</span> and <span className='text-[#FF8600] '>Privacy Policy.</span>
       </p>
 
+
       <div className="flex gap-2 mt-[32px]">
-        <span className='text-[#5B6871] text-[14px]'>Already have an account?</span>
-        <p className='text-[#FF8600] text-[14px] cursor-pointer'>Login</p>
+        <span className='text-[#5B6871] text-[14px]'>{isSignUp? 'Already have an account?': 'Don’t have an account?'}</span>
+        <p className='text-[#FF8600] text-[14px] cursor-pointer' onClick={switchMode}>{isSignUp ? 'Login': 'Register'}</p>
       </div>
     </div>
   )
@@ -31,4 +45,4 @@ const SignIn = () => {
 
 export default SignIn;
 
-// background: #5B6871
+

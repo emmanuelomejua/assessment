@@ -29,14 +29,14 @@ function Routes() {
     function AuthLayout(){
         return(
             <div className="flex min-h-[100vh]">
-                <div className="flex-1 bg-[#fff] w-1/2">
+                <div className="flex-1 bg-[#fff] w-1/2 p-[30px]">
                     <AboutBuddy/>
                 </div>
-                <div className="flex-1 bg-[#F8FAFC] p-[100px] flex-col w-1/2">
+                <div className="flex-1 bg-[#F8FAFC]  p-[20px] flex-col w-1/2">
                     <div className="flex justify-center h-fit bg-[#fff] shadow-white rounded-[8px] p-[30px]">
                         <Outlet/>
                     </div>
-                    <div className="flex justify-between p-[15px]">
+                    <div className="flex justify-between p-[15px] mt-auto">
                         <div className=""></div>
                         <div className='flex mt-[120px] items-center gap-1 p-[15px] text-[#fff] bg-[#FF8600] w-fit rounded-3xl cursor-pointer'>
                             <span className='text-[14px] font-bold'>Get Help</span>
