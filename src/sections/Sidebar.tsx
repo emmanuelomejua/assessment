@@ -49,15 +49,15 @@ const Sidebar = () => {
   const location = useLocation();
 
   return (
-    <div className="flex flex-col bg-[#fff] w-[240px] py-6 px-4 shadow-md gap-4">
+    <div className="flex flex-col bg-[#fff] w-[250px] py-6 px-4 shadow-md gap-4">
       
-    {/* Logo Section */}
+
     <div className="flex items-center justify-center mb-8">
       <img src="/buddy.png" alt="Buddy Logo" className="h-[40px]" />
       <span className="text-[#3B3B45] text-[24px] font-bold ml-2">Buddy</span>
     </div>
     
-    {/* Menu Items */}
+
     <div className="flex flex-col gap-4">
       {list.map((item) => (
         <Link 
@@ -72,7 +72,7 @@ const Sidebar = () => {
       ))}
     </div>
     
-    {/* Profile Section */}
+
     <div className="mt-auto flex flex-col items-center gap-4 rounded-xl shadow-lg p-[24px] relative">
       <img 
           src="/ellipse1.png" 
