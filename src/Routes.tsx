@@ -17,9 +17,9 @@ function Routes() {
 
     function DashboardLayout(){
         return(
-            <div className="flex flex-row w-full" >
+            <div className="flex flex-row w-full bg-[#F8FAFC]" >
                 <Sidebar/>
-                <div className="flex flex-col">
+                <div className="flex flex-col min-h-[100vh]">
                     <Navbar/>
                     <Outlet/>
                 </div>
