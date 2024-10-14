@@ -1,5 +1,5 @@
 import React from 'react';
-import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid,  ResponsiveContainer } from 'recharts';
 
 const data = [
   {
@@ -89,25 +89,16 @@ const Chart = () => {
                 <span className='text-sm bg-[#F6F6F6] text-[#818187] px-4 py-2 rounded-lg font-[500]'>Charlse</span>
             </div>
         </div>
-        <div className="w-[690px] h-[300px] flex justify-center items-center mt-3">
-            <ResponsiveContainer width="100%" height="100%">
+        <div className="w-[300px] lg:w-[690px] h-[300px] flex justify-center items-center mt-3">
+        <ResponsiveContainer width="100%" height="90%">
             <BarChart
-            // width={670}
-            // height={300}
-            data={data}
-            // margin={{
-            //     top: 5,
-            //     right: 30,
-            //     left: 20,
-            //     bottom: 5,
-            // }}
+                data={data}
             >
-            <CartesianGrid strokeDasharray="1 5"/>
-            <XAxis dataKey="name" />
-            <YAxis />
-            {/* <Tooltip /> */}
-            <Bar dataKey="pv" fill="#F1F1F2" activeBar={<Rectangle fill="pink" stroke="blue" />} />
-            <Bar dataKey="uv" fill="#E6E6E7" activeBar={<Rectangle fill="gold" stroke="purple" />} />
+            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke='#ddd'/>
+            <XAxis dataKey="name" tickLine={false}/>
+            <YAxis axisLine={false} tickLine={false}/>
+            <Bar dataKey="pv" fill="#F1F1F2" />
+            <Bar dataKey="uv" fill="#E6E6E7" />
             </BarChart>
         </ResponsiveContainer>
 
@@ -119,5 +110,3 @@ const Chart = () => {
 export default Chart;
 
 
-// background: #FFB800;
-// background: #FF8600
