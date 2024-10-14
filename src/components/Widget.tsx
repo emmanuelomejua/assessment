@@ -1,28 +1,29 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Wiget1 from '../assests/widget1.png';
 import Widget2 from '../assests/widget2.png';
 import Widget3 from '../assests/widget3.png';
+import { WidgetDetails, WidgetProps } from '../type';
 
 
-const Widget = ({type}:any) => {
+const Widget:FC<WidgetProps> = ({type}) => {
 
-    const wigetDetails = () => {
+    const wigetDetails = (): WidgetDetails => {
         switch(type){
-            case '1':
+            case 'channels':
                 return {
                     title: 'Total Channels',
                     num: 51,
                     icon: Wiget1,
                     bgColor: '#E0FAF5'
                 };
-            case '2':
+            case 'members':
                 return {
                     title: 'New Members',
                     num: 125,
                     icon: Widget2,
                     bgColor: '#EFF2FE'
                 };
-            case '3':
+            case 'impreession':
                 return {
                     title: 'All Impreession',
                     num: 789,

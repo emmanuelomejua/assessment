@@ -15,10 +15,10 @@ const Dashboard = () => {
 
         <section className="flex flex-row w-full">
             <div className="flex flex-col w-full py-6 mx-4 gap-4">
-                <div className="flex flex-row gap-3 w-full">
-                    <Widget type='1'/>
-                    <Widget  type='2'/>
-                    <Widget  type='3'/>
+                <div className="flex flex-row justify-between gap-2 w-full">
+                    <Widget type='channels'/>
+                    <Widget  type='members'/>
+                    <Widget  type='impreession'/>
                 </div>
                 <Chart/>
                 <Posts/>
@@ -36,3 +36,4 @@ const Dashboard = () => {
 }
 
 export default Dashboard;
+
