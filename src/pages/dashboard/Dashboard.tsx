@@ -4,6 +4,9 @@ import Widget from '../../components/Widget';
 import Chart from '../../sections/Chart';
 import Posts from '../../sections/Posts';
 import PotentialMembers from '../../sections/PotentialMembers';
+import WatchList from '../../sections/WatchList';
+import Revenue from '../../sections/Revenue';
+import News from '../../sections/News';
 
 const Dashboard = () => {
   return (
@@ -22,8 +25,10 @@ const Dashboard = () => {
                 <PotentialMembers/>
             </div>
 
-            <div className="flex flex-col w-[330px] bg-black py-6 mx-4">
-    r
+            <div className="flex flex-col w-[330px] py-6 mx-1 gap-3">
+                <WatchList/>
+                <Revenue/>
+                <News/>
             </div>
         </section>
     </div>
