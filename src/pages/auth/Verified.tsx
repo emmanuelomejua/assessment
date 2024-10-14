@@ -12,7 +12,7 @@ const Verified = () => {
 
       <p className='text-center font-[500] text-[#5B6871] text-[13px]'>The verified email address will be associated with your account. Click on the button below to continue</p>
 
-      <PlainButton text='Continue'/>
+      <PlainButton onClick={() => {}} text='Continue'/>
 
     </div>
   )

@@ -1,12 +1,15 @@
 import React from 'react';
 import Header from '../../components/Header';
 import Button from '../../components/Button';
+import { useNavigate } from 'react-router-dom';
 
 const Auth = () => {
+  const navigate = useNavigate();
+
   return (
     <div className='flex flex-col gap-5'>
       <Header text='Register your account'/>
-      <Button text='Sign up with email' url='/email.png' />
+      <Button text='Sign up with email' url='/email.png' onClick={() => navigate('/auth/signin')} />
 
       <div className="flex flex-row text-[#DDE2E4] w-full items-center gap-2">
         <hr className='w-full'/>
@@ -14,10 +17,14 @@ const Auth = () => {
         <hr className='w-full'/>
       </div>
 
-      <Button text='Sign up with Google' url='/google.png' />
+      <Button 
+        text='Sign up with Google' 
+        url='/google.png'
+        onClick={() => navigate('/auth/signin')}
+        />
 
 
-      <p className="text-[#5B6871] text-[16px] font-[400] mt-[24px]">
+      <p className="text-[#5B6871] text-[13px] font-[400] mt-[24px]">
         By clicking the button above, you agree to our <span className='text-[#FF8600] '>Terms of Service</span> and <span className='text-[#FF8600] '>Privacy Policy.</span>
       </p>
 

@@ -5,9 +5,11 @@ import { MessageBody } from "../../sections/message/MessageBody";
 
 const Message = () => {
   return (
-    <div className="w-full h-[100vh] p-5 bg-[#f0f0f0] flex flex-col">
+    <div className="w-full min-h-[100vh] bg-[#f0f0f0] flex flex-col">
       <Navbar title='Messages'/>
-      <MessageBody />
+      <div className="p-4 w-full">
+        <MessageBody />
+      </div>
     </div>
   );
 };

@@ -7,7 +7,7 @@ const list = [
   {
     id: 0,
     name: 'My Portfolio',
-    icon: '/account.png',
+    icon: '/user1.png',
     url: '/'
   },
   {

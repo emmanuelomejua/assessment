@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, ChangeEventHandler } from 'react';
 
 
 interface IInput{
@@ -9,11 +9,15 @@ interface IInput{
   isActive?: boolean;
   isEmail?: boolean;
   placeholder: string;
+  name: string;
+  value: string;
+  onChange: ChangeEventHandler<HTMLInputElement>;
+
 }
 
-const Input:FC<IInput> = ({half, label, img, type, isEmail, isActive, placeholder }) => {
+const Input:FC<IInput> = ({half, label, img, type, isEmail, isActive, placeholder, name, value, onChange }) => {
   return (
-    <div className={`flex flex-col gap-1 ${half ? 'w-1/2': 'w-full'}`}>
+    <div className={`flex flex-col gap-1 ${half ? 'w-[185px]': 'w-[380px]'}`}>
       { isActive &&
         <label htmlFor="" className='flex gap-2 items-center'>
         {label}
@@ -23,9 +27,9 @@ const Input:FC<IInput> = ({half, label, img, type, isEmail, isActive, placeholde
         </label>
       }
 
-      <div className={`flex gap-3 items-center rounded-lg ${isActive ? 'border-[#FF8600] ': 'border-[#DDE2E4]'} border-[1px] p-4`}>
+      <div className={`flex gap-3 items-center rounded-lg ${isActive ? 'border-[#FF8600] ': 'border-[#DDE2E4]'} border-[1px] p-2`}>
         <img src={img} alt="" className="h-[15px]" />
-        <input type={type} className="outline-none" placeholder={placeholder}/>
+        <input type={type} className="outline-none" placeholder={placeholder} name={name} value={value} onChange={onChange}/>
         {/* <img src={img} alt="" className="h-[15px]" /> */}
       </div>
       { !half && isActive &&

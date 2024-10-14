@@ -53,7 +53,7 @@ function Routes() {
                     <AboutBuddy/>
                 </div>
                 <div className="flex-1 bg-[#F8FAFC] flex-col w-1/2">
-                    <div className="flex justify-center items-center h-full p-[100px]">
+                    <div className="flex justify-center items-center h-full">
                         <Outlet/>
                     </div>
                 </div>
