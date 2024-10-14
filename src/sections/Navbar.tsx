@@ -10,18 +10,18 @@ const Navbar = ({title}:ITitle) => {
         <h2 className='text-[24px] font-bold leading-4 text-[#3B3B45]'>{title}</h2>
 
         <div className="flex items-center gap-2">
-            <div className="flex items-center mx-4 rounded-[16px] bg-white py-2 px-4 gap-1 max-w-[400px] w-full">
-                <img src="/search.png" alt="Search" className="text-[#000F29]" />
-                <input type="text" className="outline-none" placeholder='Search'/>
+            <div className="flex items-center mx-4 rounded-[16px] bg-white p-3 gap-1 w-[400px]">
+                <img src="/search.png" alt="Search" className="text-[#000F29] h-[13px] w-[13px]" />
+                <input type="text" className="outline-none font-[600] text-[13px] ml-2 w-full" placeholder='Search'/>
             </div>
         
-            <div className="flex items-center justify-center bg-white rounded-3xl p-3 cursor-pointer">
+            <div className="flex items-center justify-center bg-white rounded-3xl h-[50px] w-[50px] cursor-pointer">
                 <img src="/add.png" alt="" className="h-[20px] w-[20px]" />
             </div>
         
-            <div className="flex items-center justify-center bg-white rounded-3xl p-3 cursor-pointer relative">
+            <div className="flex items-center justify-center bg-white rounded-3xl h-[50px] w-[50px] cursor-pointer relative">
                 <img src="/not.png" alt="" className="h-[20px] w-[20px]" />
-                <div className='bg-red-600 p-1 rounded absolute top-3 right-[10px]'/>
+                <div className='bg-red-600 p-1 rounded absolute top-4 right-[13px]'/>
             </div>
         </div>
 

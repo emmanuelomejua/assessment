@@ -1,6 +1,7 @@
 import React from 'react';
 import share from '../assests/share.png';
 import comment from '../assests/comment.png';
+import love from '../assests/love.jpeg'
 
 
 const lists = [
@@ -22,7 +23,7 @@ const lists = [
 var lists2 = [
     {
         id: 0,
-        icon: share,
+        icon: love,
         num: 260
     },
     {
