@@ -40,7 +40,7 @@ var lists2 = [
 
 const Posts = () => {
   return (
-    <div className='bg-white rounded-lg flex flex-col p-4 gap-3'>
+    <div className='bg-white rounded-[16px] flex flex-col p-4 gap-3'>
         <h1 className='text-[#3B3B45] font-bold text-xl'>Trending Posts</h1>
        
        <div className="flex flex-row gap-3 items-center">

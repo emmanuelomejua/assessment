@@ -38,7 +38,7 @@ const Widget:FC<WidgetProps> = ({type}) => {
     const details = wigetDetails();
 
   return (
-    <div className='flex items-center justify-between rounded-lg bg-white p-4 max-w-[280px] w-full min-h-[90px]' >
+    <div className='flex items-center justify-between rounded-[16px] bg-white p-4 max-w-[280px] w-full min-h-[90px]' >
         <div className="flex flex-col">
             <span className='text-[#3B3B45] text-xl font-bold'>{details.num}</span>
             <span className='text-[#A3A3A6] text-xs leading-3'>{details.title}</span>

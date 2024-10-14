@@ -11,7 +11,7 @@ import News from '../../sections/News';
 const Dashboard = () => {
   return (
     <div className='flex flex-col h-full w-full'>
-        <Navbar/>
+        <Navbar title='My Portfolio'/>
 
         <section className="flex flex-row w-full">
             <div className="flex flex-col w-full py-6 mx-4 gap-4">
