@@ -38,10 +38,11 @@ const SignIn = () => {
         </div>
       }
 
-      <Input type='email' img='/email2.png' onChange={handlechange} name='email' value={user.email} label='Work Email' placeholder='Work Email' isEmail/>
-      <Input type='password' img='/lock.png' onChange={handlechange} name='password' value={user.password} label='Password' placeholder='Password' />
+      <Input type='email' img='/email2.png' onChange={handlechange} name='email' value={user.email} label='Work Email' placeholder='Work Email' isEmail suffixIcon/>
 
-      <AuthButton onClick={() => {}} text={isSignUp ? 'Create account': 'Login'}/>
+      <Input type='password' img='/lock.png' onChange={handlechange} name='password' value={user.password} label='Password' placeholder='Password' suffixIcon/>
+
+      <AuthButton onClick={() => {}} text={isSignUp ? 'Create account': 'Login'} />
 
       <p className="text-[#5B6871] text-[13px] font-[400] mt-[24px]">
         By clicking the button above, you agree to our <span className='text-[#FF8600] '>Terms of Service</span> and <span className='text-[#FF8600] '>Privacy Policy.</span>
