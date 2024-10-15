@@ -20,8 +20,38 @@ const SignIn = () => {
 
   const [user, setUser] = useState(initialState);
 
+
+  const [activeFields, setActiveFields] = useState({
+    first_name: false,
+    last_name: false,
+    email: false,
+    password: false,
+  });
+
+  const isFormComplete = isSignUp
+    ? user.first_name && user.last_name && user.email && user.password
+    : user.email && user.password;
+
+    const countAlphabeticCharacters = (text: string) => {
+      return text.replace(/[^a-zA-Z]/g, '').length;
+    };
+
+
   const handlechange = (e: ChangeEvent<HTMLInputElement>) => {
-    setUser({...user, [e.target.name]: e.target.value})
+    // setUser({...user, [e.target.name]: e.target.value});
+    const { name, value } = e.target;
+    setUser({ ...user, [name]: value });
+
+    if (value.trim() !== '') {
+      setActiveFields((prev) => ({ ...prev, [name]: true }));
+    } else {
+      setActiveFields((prev) => ({ ...prev, [name]: false }));
+    }
+  }
+
+
+  const handleSubmit = async () => {
+
   }
 
 
@@ -33,16 +63,43 @@ const SignIn = () => {
 
       {isSignUp &&
         <div className="flex flex-row gap-2">
-          <Input half type='text' img='/user.png' onChange={handlechange} name='first_name' value={user.first_name} label='First Name' placeholder='First Name' isActive/>
-          <Input half type='text' img='/user.png' onChange={handlechange} name='last_name' value={user.last_name} label='Last Name' placeholder='Last Name' isActive/>
+          <Input half type='text' 
+            img='/user.png' onChange={handlechange} 
+            name='first_name' value={user.first_name} 
+            label='First Name' 
+            placeholder='First Name' 
+            isActive={activeFields.first_name}
+          />
+          
+          <Input half type='text' img='/user.png' 
+            onChange={handlechange} name='last_name' 
+            value={user.last_name} 
+            label='Last Name' 
+            placeholder='Last Name' 
+            isActive={activeFields.last_name}
+          />
+
         </div>
       }
 
-      <Input type='email' img='/email2.png' onChange={handlechange} name='email' value={user.email} label='Work Email' placeholder='Work Email' isEmail suffixIcon isActive/>
+      <Input type='email' img='/email2.png' 
+        onChange={handlechange} name='email' 
+        value={user.email} label='Work Email' 
+        placeholder='Work Email' 
+        isEmail suffixIcon 
+        isActive={activeFields.email}
+        x={countAlphabeticCharacters(user.email)}
+      />
 
-      <Input type='password' img='/lock.png' onChange={handlechange} name='password' value={user.password} label='Password' placeholder='Password' suffixIcon isActive/>
+      <Input type='password' img='/lock.png' 
+        onChange={handlechange} name='password' 
+        value={user.password} label='Password' 
+        placeholder='Password' suffixIcon 
+        isActive={activeFields.password}
+        x={countAlphabeticCharacters(user.password)}
+      />
 
-      <AuthButton onClick={() => {}} text={isSignUp ? 'Create account': 'Login'} />
+      <AuthButton onClick={handleSubmit} text={isSignUp ? 'Create account': 'Login'} active={isFormComplete} />
 
       <p className="text-[#5B6871] text-[13px] font-[400] mt-[24px]">
         By clicking the button above, you agree to our <span className='text-[#FF8600] '>Terms of Service</span> and <span className='text-[#FF8600] '>Privacy Policy.</span>

@@ -13,6 +13,8 @@ import Verified from './pages/auth/Verified';
 
 function Routes() {
 
+    // const user = false;
+
 
     function DashboardLayout(){
         return(

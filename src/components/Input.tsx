@@ -44,12 +44,12 @@ const Input:FC<IInput> = ({half, label, img, type, isEmail, isActive, placeholde
           maxLength={type === 'email' ? 60 : type === 'password' ? 15 : undefined}
           onChange={onChange} required/>
         </div>
-        { suffixIcon && type === 'email' && (
+        { suffixIcon && type === 'email' && isActive && (
           <span className='flex items-center justify-center cursor-pointer' >
             <img src='/okay.png' alt="" className="" />
           </span>
         )}
-        { suffixIcon && type === 'password' && (
+        { suffixIcon && type === 'password' && isActive && (
         <span className='flex items-center justify-center cursor-pointer' onClick={() => setShowPassword(!showPassword)}>
           <img src={showPassword ? '/visiblity.png': '/visibilityoff.svg'} alt="" className="" />
         </span>
