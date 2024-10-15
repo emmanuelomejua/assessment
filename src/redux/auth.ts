@@ -9,8 +9,8 @@ const initialState = {
     error: false
 };
 
-const login = createAsyncThunk(
-	'auth/register',
+export const login = createAsyncThunk(
+	'auth/login',
 	async (user, { rejectWithValues }: any) => {
 		try {
 			const res = await SERVER.post('register', user);
@@ -25,8 +25,8 @@ const login = createAsyncThunk(
 
 
 
-const register = createAsyncThunk(
-	'auth/login',
+export const register = createAsyncThunk(
+	'auth/register',
 	async (user, { rejectWithValues }: any) => {
 		try {
 			const res = await SERVER.post('login', user);

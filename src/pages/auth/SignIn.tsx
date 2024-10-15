@@ -2,10 +2,13 @@ import React, { ChangeEvent, useState } from 'react'
 import Header from '../../components/Header';
 import Input from '../../components/Input';
 import {AuthButton} from '../../components/Button';
+import SERVER from '../../util/server';
+
 
 const SignIn = () => {
 
   const [isSignUp, setIsSignup] = useState(true);
+
 
   const switchMode = () => {
     setIsSignup(!isSignUp)
@@ -51,7 +54,14 @@ const SignIn = () => {
 
 
   const handleSubmit = async () => {
-
+    try {
+      const res = isSignUp ? 
+      await SERVER.post('register', user): 
+      await SERVER.post('login', user)
+      console.log(res.data);
+    } catch (error) {
+      throw new Error();
+    }
   }
 
 
