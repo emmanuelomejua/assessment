@@ -36,7 +36,7 @@ const SignIn = () => {
     : user.email && user.password;
 
     const countAlphabeticCharacters = (text: string) => {
-      return text.replace(/[^a-zA-Z]/g, '').length;
+      return text.replace(/[^a-zA-Z0-9]/g, '').length;
     };
 
 
@@ -56,9 +56,16 @@ const SignIn = () => {
   const handleSubmit = async () => {
     try {
       const res = isSignUp ? 
-      await SERVER.post('register', user): 
-      await SERVER.post('login', user)
-      console.log(res.data);
+      await SERVER.post('register', user)
+      : await SERVER.post('login', user)
+
+      if(res.data && isSignUp){
+        localStorage.setItem('token', JSON.stringify(res.data.token));
+        window.location.replace('/verify')
+      } else {
+        localStorage.setItem('token', JSON.stringify(res.data.token));
+        window.location.replace('/')
+      }
     } catch (error) {
       throw new Error();
     }
