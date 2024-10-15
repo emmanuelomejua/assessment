@@ -53,7 +53,8 @@ const SignIn = () => {
   }
 
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
     try {
       const res = isSignUp ? 
       await SERVER.post('register', user)
@@ -66,8 +67,9 @@ const SignIn = () => {
         localStorage.setItem('token', JSON.stringify(res.data.token));
         window.location.replace('/')
       }
+      console.log(res.data);
     } catch (error) {
-      throw new Error();
+      console.log(error);
     }
   }
 

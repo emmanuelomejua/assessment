@@ -14,7 +14,7 @@ import ProtectedRoute from './ProtectedRoute';
 
 function Routes() {
 
-    const user = false;
+    const user = localStorage.getItem('token') || 'null';
 
 
     function DashboardLayout(){

@@ -2,7 +2,7 @@ import { Navigate } from 'react-router-dom';
 
 
 interface ProtectedRouteProps {
-  user: boolean;
+  user: string;
   children: React.ReactNode;
 }
 
