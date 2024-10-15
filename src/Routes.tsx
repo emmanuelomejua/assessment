@@ -8,6 +8,7 @@ import Dashboard from './pages/dashboard/Dashboard';
 import Message from './pages/dashboard/Message';
 import SignIn from './pages/auth/SignIn';
 import Verified from './pages/auth/Verified';
+import ProtectedRoute from './ProtectedRoute';
 
 
 
@@ -67,7 +68,11 @@ function Routes() {
     const router = createBrowserRouter([
         {
             path: '/',
-            element: <DashboardLayout/>,
+            element:(
+                <ProtectedRoute user={user}>
+                    <DashboardLayout/>
+                </ProtectedRoute>
+             ),
             children: [
                 {
                     path: '/',
