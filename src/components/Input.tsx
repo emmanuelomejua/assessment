@@ -13,10 +13,12 @@ interface IInput{
   value: string;
   onChange: ChangeEventHandler<HTMLInputElement>;
   suffixIcon?: boolean;
+  maxLength?: number;
+  x?: number
 
 }
 
-const Input:FC<IInput> = ({half, label, img, type, isEmail, isActive, placeholder, name, value, onChange, suffixIcon }) => {
+const Input:FC<IInput> = ({half, label, img, type, isEmail, isActive, placeholder, name, value, onChange, suffixIcon, x }) => {
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -37,7 +39,10 @@ const Input:FC<IInput> = ({half, label, img, type, isEmail, isActive, placeholde
           <input 
           type={showPassword ? "text" : type} 
           className={`outline-none ${half && 'max-w-[120px] w-[inherit]'}`} 
-          placeholder={placeholder} name={name} value={value} onChange={onChange} required/>
+          placeholder={placeholder} 
+          name={name} value={value} 
+          maxLength={type === 'email' ? 60 : type === 'password' ? 15 : undefined}
+          onChange={onChange} required/>
         </div>
         { suffixIcon && type === 'email' && (
           <span className='flex items-center justify-center cursor-pointer' >
@@ -54,7 +59,9 @@ const Input:FC<IInput> = ({half, label, img, type, isEmail, isActive, placeholde
       { !half && isActive &&
         <div className="flex justify-between items-center">
           <div className=""></div>
-          <span> 15/15</span>
+          <span className='text-[10px] text-[#84919A]'>
+            {x} / {type === 'email' ? 60 : 15}
+          </span>
         </div>
       }
     </div>
@@ -62,3 +69,5 @@ const Input:FC<IInput> = ({half, label, img, type, isEmail, isActive, placeholde
 }
 
 export default Input;
+
+

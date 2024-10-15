@@ -33,14 +33,14 @@ const SignIn = () => {
 
       {isSignUp &&
         <div className="flex flex-row gap-2">
-          <Input half type='text' img='/user.png' onChange={handlechange} name='first_name' value={user.first_name} label='First Name' placeholder='First Name'/>
-          <Input half type='text' img='/user.png' onChange={handlechange} name='last_name' value={user.last_name} label='Last Name' placeholder='Last Name'/>
+          <Input half type='text' img='/user.png' onChange={handlechange} name='first_name' value={user.first_name} label='First Name' placeholder='First Name' isActive/>
+          <Input half type='text' img='/user.png' onChange={handlechange} name='last_name' value={user.last_name} label='Last Name' placeholder='Last Name' isActive/>
         </div>
       }
 
-      <Input type='email' img='/email2.png' onChange={handlechange} name='email' value={user.email} label='Work Email' placeholder='Work Email' isEmail suffixIcon/>
+      <Input type='email' img='/email2.png' onChange={handlechange} name='email' value={user.email} label='Work Email' placeholder='Work Email' isEmail suffixIcon isActive/>
 
-      <Input type='password' img='/lock.png' onChange={handlechange} name='password' value={user.password} label='Password' placeholder='Password' suffixIcon/>
+      <Input type='password' img='/lock.png' onChange={handlechange} name='password' value={user.password} label='Password' placeholder='Password' suffixIcon isActive/>
 
       <AuthButton onClick={() => {}} text={isSignUp ? 'Create account': 'Login'} />
 
